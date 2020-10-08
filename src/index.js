@@ -1,10 +1,11 @@
 import React from "react";
-import ReactDOM, { render } from "react-dom";
+import { render } from "react-dom";
 import HomePage from './components/HomePage';
+import AboutPage from './components/AboutPage';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 render(
-    <HomePage />,
+    <AboutPage />,
     document.getElementById('root')
 );
