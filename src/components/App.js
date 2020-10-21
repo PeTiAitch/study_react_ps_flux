@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
 import CoursesPage from './CoursesPage';
+import ManageCoursePage from './ManageCoursePage';
 import Header from "./common/Header";
 import NotFoundPage from './NotFoundPage';
 
@@ -15,6 +16,7 @@ const App = () => {
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/courses" component={CoursesPage} />
+        <Route path="/course/:slug" component={ManageCoursePage} />
         <Route path="/about" component={AboutPage} />
         <Redirect from="/about-page" to="about" />
         <Route component={NotFoundPage} />
