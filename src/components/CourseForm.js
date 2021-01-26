@@ -1,5 +1,6 @@
 import React from "react";
 import TextInput from "./common/TextInput";
+import SelectInput from "./common/SelectInput";
 
 function CourseForm(props) {
   return (
@@ -12,22 +13,17 @@ function CourseForm(props) {
         onChange={props.onChange}
       />
 
-      <div className="form-group">
-        <label htmlFor="author">Author</label>
-        <div className="field">
-          <select
-            id="author"
-            name="authorId"
-            className="form-control"
-            value={props.course.authorId || ""}
-            onChange={props.onChange}
-          >
-            <option value="" />
-            <option value="1">Cory House</option>
-            <option value="2">Scott Allen</option>
-          </select>
-        </div>
-      </div>
+      <SelectInput
+        id="author"
+        name="authorId"
+        label="Author"
+        value={props.course.authorId || ""}
+        onChange={props.onChange}
+        options={[
+          { value: "1", optionName: "Cory House" },
+          { value: "2", optionName: "Scott Allen" },
+        ]}
+      />
 
       <TextInput
         id="category"
