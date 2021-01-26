@@ -12,7 +12,7 @@ function CourseForm(props) {
             name="title"
             className="form-control"
             value={props.course.title}
-            onChange={props.onTitleChange}
+            onChange={props.onChange}
           />
         </div>
       </div>
@@ -20,7 +20,13 @@ function CourseForm(props) {
       <div className="form-group">
         <label htmlFor="author">Author</label>
         <div className="field">
-          <select id="author" name="authorId" value={props.course.authorId || ''} className="form-control">
+          <select
+            id="author"
+            name="authorId"
+            className="form-control"
+            value={props.course.authorId || ""}
+            onChange={props.onChange}
+          >
             <option value="" />
             <option value="1">Cory House</option>
             <option value="2">Scott Allen</option>
@@ -37,6 +43,7 @@ function CourseForm(props) {
             name="category"
             className="form-control"
             value={props.course.category}
+            onChange={props.onChange}
           />
         </div>
       </div>
