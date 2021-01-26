@@ -38,5 +38,4 @@ TextInput.defaultProps = {
   error: "",
 };
 
-
 export default TextInput;
