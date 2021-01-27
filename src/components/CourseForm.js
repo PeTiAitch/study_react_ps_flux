@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import TextInput from "./common/TextInput";
 import SelectInput from "./common/SelectInput";
 
@@ -11,6 +12,7 @@ function CourseForm(props) {
         label="Title"
         value={props.course.title}
         onChange={props.onChange}
+        error={props.errors.title}
       />
 
       <SelectInput
@@ -23,6 +25,7 @@ function CourseForm(props) {
           { value: "1", optionName: "Cory House" },
           { value: "2", optionName: "Scott Allen" },
         ]}
+        error={props.errors.authorId}
       />
 
       <TextInput
@@ -31,11 +34,19 @@ function CourseForm(props) {
         label="Category"
         value={props.course.category}
         onChange={props.onChange}
+        error={props.errors.category}
       />
 
       <input type="submit" value="Save" className="btn btn-primary" />
     </form>
   );
 }
+
+CourseForm.propTypes = {
+  course: PropTypes.object.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
+};
 
 export default CourseForm;
