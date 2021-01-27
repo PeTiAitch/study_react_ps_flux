@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as courseApi from "../api/courseApi";
 import { toast } from "react-toastify";
 
@@ -12,8 +12,14 @@ const ManageCoursePage = (props) => {
     authorId: null,
     category: "",
   });
-
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    const slug = props.match.params.slug;
+    if (slug) {
+      courseApi.getCourseBySlug(slug).then(_course => setCourse(_course));
+    }
+  }, [props.match.params.slug]);
 
   const handleChange = ({ target }) => {
     setCourse({ ...course, [target.name]: target.value });
@@ -50,7 +56,6 @@ const ManageCoursePage = (props) => {
         onSubmit={handleSubmit}
         errors={errors}
       />
-      {props.match.params.slug}
     </>
   );
 };
