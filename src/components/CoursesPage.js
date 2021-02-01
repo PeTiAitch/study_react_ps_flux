@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { getCourses } from "../api/courseApi";
+import courseStore from '../stores/courseStore';
 import CourseList from './CourseList';
 
 function CoursesPage() {
@@ -9,7 +10,7 @@ function CoursesPage() {
   // In the dependancy array, when it's empty it meant the effect is run only once, 
   // if there are vlues, it's run every time those values change
   useEffect(() => {
-    getCourses().then((_courses) => setCourses(_courses));
+    setCourses(courseStore.getCourses());
   }, []);
 
   return (
