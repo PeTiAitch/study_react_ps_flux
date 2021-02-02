@@ -9,7 +9,7 @@
     },
     {
       "id": 2,
-      "title": "React: The Big Picture",
+      "title": "React: The Big Picture999",
       "slug": "react-big-picture",
       "authorId": 1,
       "category": "JavaScript"
@@ -69,22 +69,6 @@
       "slug": "web-components-shadow-dom",
       "authorId": 1,
       "category": "HTML5"
-    },
-    {
-      "id": 11,
-      "slug": "under-construction",
-      "title": "Under Construction",
-      "authorId": 1,
-      "category": "ii",
-      "createdAt": 1612194644687
-    },
-    {
-      "id": 12,
-      "slug": "old-cat",
-      "title": "Old Cat",
-      "authorId": 1,
-      "category": "fgfdg",
-      "createdAt": 1612194970908
     }
   ],
   "authors": [
