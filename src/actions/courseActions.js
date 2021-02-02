@@ -11,6 +11,15 @@ export const saveCourse = (course) => {
     });
 }
 
+export const deleteCourse = courseId => {
+    return courseApi.deleteCourse(courseId).then(() => {
+        dispatcher.dispatch({
+            actionType: actionTypes.DELETE_COURSE,
+            courseId
+        });
+    })
+}
+
 export const loadCourses = () => {
     return courseApi.getCourses().then(courses => {
       dispatcher.dispatch({

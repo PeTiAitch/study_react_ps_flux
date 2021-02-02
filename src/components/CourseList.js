@@ -49,6 +49,7 @@ CourseList.propTypes = {
       category: PropTypes.string.isRequired,
     })
   ).isRequired,
+  deleteCourse: PropTypes.func.isRequired
 };
 
 export default CourseList;
