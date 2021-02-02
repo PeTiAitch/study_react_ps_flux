@@ -44,6 +44,7 @@ Dispatcher.register((action) => {
       _courses = _courses.map((course) =>
         course.id === action.course.id ? action.course : course
       );
+      store.emitChange();
       break;
     default:
     // nothing to do
